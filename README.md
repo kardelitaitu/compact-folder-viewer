@@ -45,5 +45,5 @@ objShell.Run "powershell.exe -ExecutionPolicy Bypass -File ""C:\Path\To\Your\fol
 
 or
 
-Whatever you want with it 🤣
+do whatever
 ```
