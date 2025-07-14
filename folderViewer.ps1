@@ -1,14 +1,10 @@
-﻿
-
-Add-Type -AssemblyName PresentationFramework
+﻿Add-Type -AssemblyName PresentationFramework
 Add-Type -AssemblyName PresentationCore
 Add-Type -AssemblyName WindowsBase
-
 # Folder and config paths
 $folderPath = "C:\Path\To\Your\Files"
 $maxRows = 20
 $configPath = Join-Path $PSScriptRoot 'FolderViewer.cfg'
-
 # Load/save config
 function Load-Config {
     if (Test-Path $configPath) {
@@ -28,7 +24,6 @@ function Save-Config {
     }
     $config | ConvertTo-Json | Set-Content $configPath
 }
-
 # Load config
 $config = Load-Config
 $window = New-Object Windows.Window
@@ -41,12 +36,9 @@ $window.Background = "Black"
 $window.Topmost = $true
 $window.WindowStartupLocation = 'Manual'
 $window.Add_Closed({ Save-Config $window })
-
 # 💡 Hide minimize and maximize buttons, but allow resizing
 $window.ResizeMode = 'CanResize'             # ✅ Allows drag resizing
 $window.WindowStyle = 'ToolWindow'           # ✅ Removes minimize/maximize buttons
-
-
 # Create ListBox with hidden scrollbar template
 $styleXaml = @"
 <Style xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -71,7 +63,6 @@ $styleXaml = @"
 "@
 $reader = New-Object System.Xml.XmlNodeReader([xml]$styleXaml)
 $listBoxStyle = [Windows.Markup.XamlReader]::Load($reader)
-
 # ListBox setup
 $listBox = New-Object Windows.Controls.ListBox
 $listBox.Style = $listBoxStyle
@@ -81,7 +72,6 @@ $listBox.BorderThickness = 0
 $listBox.Background = "Transparent"
 $listBox.HorizontalContentAlignment = "Left"
 $listBox.VerticalContentAlignment = "Top"
-
 # Load items
 if (Test-Path $folderPath) {
     $files = Get-ChildItem -Path $folderPath
@@ -105,7 +95,6 @@ if (Test-Path $folderPath) {
     $errorItem.Content = "Folder not found: $folderPath"
     $listBox.Items.Add($errorItem)
 }
-
 # File launch events
 $listBox.Add_MouseDoubleClick({
     if ($listBox.SelectedItem -and $listBox.SelectedItem.Tag) {
@@ -117,7 +106,6 @@ $listBox.Add_KeyDown({
         Start-Process -FilePath $listBox.SelectedItem.Tag
     }
 })
-
 # Show window
 $window.Content = $listBox
 $window.ShowDialog()
