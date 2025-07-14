@@ -9,6 +9,7 @@ A small and compact, keyboard-friendly **PowerShell GUI** tool for browsing and 
 ## 🔧 Features
 
 - 🖥️ Fully customizeable font/background color & window dimensions with auto-save config (`FolderViewer.cfg`)
+- 🧪 Always remember it's position and size
 - 📁 Lists files in groupings of 20 for visual clarity
 - 🎯 Double-click or press `Enter` to launch any item
 - 🧩 Hidden scrollbar `ListBox` styling for clean presentation
