@@ -5,7 +5,7 @@ Add-Type -AssemblyName PresentationCore
 Add-Type -AssemblyName WindowsBase
 
 # Folder and config paths
-$folderPath = "C:\Users\Dika\Desktop\Brave Profiles\BAT"
+$folderPath = "C:\Path\To\Your\Files"
 $maxRows = 20
 $configPath = Join-Path $PSScriptRoot 'FolderViewer.cfg'
 
