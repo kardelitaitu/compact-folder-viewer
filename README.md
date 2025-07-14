@@ -1,17 +1,19 @@
 # 🌒 Compact Folder Viewer
 
-A compact, keyboard-friendly **PowerShell GUI** tool for browsing and launching files from a specified directory. Built with **WPF**, styled with hidden scrollbars and semi-bold file entries for a slick visual experience.
+A small and compact, keyboard-friendly **PowerShell GUI** tool for browsing and launching files from a specified directory. Built with **WPF**, styled with hidden scrollbars and semi-bold file entries for a slick visual experience.
 
----
+<p align="center">
+  <img src="https://i.postimg.cc/433b310c/image.png" alt="Centered Image" width="400"/>
+</p>
 
 ## 🔧 Features
 
-- 🖥️ Custom window dimensions with auto-save config (`FolderViewer.cfg`)
+- 🖥️ Fully customizeable font/background color & window dimensions with auto-save config (`FolderViewer.cfg`)
 - 📁 Lists files in groupings of 20 for visual clarity
 - 🎯 Double-click or press `Enter` to launch any item
 - 🧩 Hidden scrollbar `ListBox` styling for clean presentation
 - 🗂 Persistent view window with topmost behavior
-- 🖤 Minimal UI: black background, light gray text, drag-resizable, no noisy icons
+- 🖤 Minimal UI: black background, light gray text, drag-resizable, no noisy files/minimize/resize icons
 
 ---
 
