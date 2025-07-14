@@ -33,12 +33,17 @@ A small and compact, keyboard-friendly **PowerShell GUI** tool for browsing and 
 $folderPath = "C:\Path\To\Your\Files"
 ----------------------------------------
 then
+
 # Run the script
 .\FolderViewer.ps1
+
 or
+
 # Set where folderViewer.ps1 located on .vbs then open it
 Set objShell = CreateObject("Wscript.Shell")
 objShell.Run "powershell.exe -ExecutionPolicy Bypass -File ""C:\Path\To\Your\folderViewer\folderViewer.ps1""", 0, False
+
 or
-Whatever
+
+Whatever you want with it 🤣
 ```
